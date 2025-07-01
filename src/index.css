@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#root {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+}
