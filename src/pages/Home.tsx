@@ -1,10 +1,11 @@
 
-const sliderImages = [
-  'http://crsinformatica.com.ar/images/slide828e7e6e41eb41baaaeff0b8d986ee6d0.jpg',
-  'http://crsinformatica.com.ar/images/slide828e7e6e41eb41baaaeff0b8d986ee6d1.jpg',
-  'http://crsinformatica.com.ar/images/slide828e7e6e41eb41baaaeff0b8d986ee6d2.jpg',
-  'http://crsinformatica.com.ar/images/slide828e7e6e41eb41baaaeff0b8d986ee6d3.jpg',
+const sliderImages =  [
+  'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751561548/slide828e7e6e41eb41baaaeff0b8d986ee6d0_yiqfsx.webp',
+  'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751561548/slide828e7e6e41eb41baaaeff0b8d986ee6d1_ppmp9i.webp',
+  'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751561548/slide828e7e6e41eb41baaaeff0b8d986ee6d2_1_cnsh9k.webp',
+  'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751561548/slide828e7e6e41eb41baaaeff0b8d986ee6d3_jp6x9c.webp',
 ];
+
 
 const Home = () => {
   return (
