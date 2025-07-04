@@ -2,12 +2,12 @@ import React from 'react';
 
 // Recursos para Reparación de PC
 const recursosPC = [
-  { titulo: 'DRIVER TALENT', img: 'images/driver%20talent.jpg', link: 'Software/20%20-%20Driver.Talent.Pro.v8.1.11.24.Multilingual.Incl.Crack.rar' },
-  { titulo: 'BLEACHBIT', img: 'images/BLEACHBIT.jpeg', link: 'Software/10%20-%20BleachBit.rar' },
-  { titulo: 'PACK ACTIVADORES WINDOWS Y OFFICE', img: 'images/ACTIVATOR.jpg', link: 'Software/32%20-%20Pack%20Activadores%20Windows-Office.rar' },
-  { titulo: 'WISE REGISTRY CLEANER', img: 'images/WISE%20REGISTRY%20CLEANER.png', link: 'Software/49%20-%20Wise.Registry.Cleaner.Pro.v10.8.1.702.Multilingual.Incl.Patch.rar' },
-  { titulo: 'ADWCLEANER', img: 'images/ADWCLEANER.png', link: 'Software/6%20-%20adwcleaner.rar' },
-  { titulo: 'FREE PC AUDIT', img: 'images/FREE%20PC%20AUDIT.jpg', link: 'Software/23%20-%20free%20pc%20audit.rar' },
+  { titulo: 'DRIVER TALENT', img: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751671312/driver_talent_crltii.webp', link: 'Software/20%20-%20Driver.Talent.Pro.v8.1.11.24.Multilingual.Incl.Crack.rar' },
+  { titulo: 'BLEACHBIT', img: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751671227/BLEACHBIT_qavoks.webp', link: 'Software/10%20-%20BleachBit.rar' },
+  { titulo: 'PACK ACTIVADORES WINDOWS Y OFFICE', img: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751671221/ACTIVATOR_zxylgs.webp', link: 'Software/32%20-%20Pack%20Activadores%20Windows-Office.rar' },
+  { titulo: 'WISE REGISTRY CLEANER', img: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751671218/WISE_REGISTRY_CLEANER_qqicmt.webp', link: 'Software/49%20-%20Wise.Registry.Cleaner.Pro.v10.8.1.702.Multilingual.Incl.Patch.rar' },
+  { titulo: 'ADWCLEANER', img: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751671223/ADWCLEANER_kuvaoc.webp', link: 'Software/6%20-%20adwcleaner.rar' },
+  { titulo: 'FREE PC AUDIT', img: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751671313/FREE_PC_AUDIT_fmp8sz.webp', link: 'Software/23%20-%20free%20pc%20audit.rar' },
   { titulo: 'DOUBLE DRIVER', img: 'images/DOUBLE%20DRIVER.jpg', link: 'Software/18%20-%20Double%20Driver.rar' },
   { titulo: 'ACRONIS TRUE IMAGE WIN PE', img: 'images/ACRONIS.png', link: 'https://drive.google.com/file/d/1zRYun-kITX1CYEzOA8jQBGXeZd3rgtfY/view?usp=sharing' },
   { titulo: 'ANTIVIRUS DE MICROSOFT PARA WINDOWS 7', img: 'images/SECURITY%20ESSENTIALS.png', link: 'Software/8%20-%20Antivirus%20Microsoft%20para%20W%207.rar' },
@@ -122,7 +122,7 @@ const Recursos: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {recursosPC.map((recurso, i) => (
               <div key={i} className="bg-white/5 backdrop-blur-sm rounded-xl shadow hover:shadow-lg hover:bg-[#2563eb]/20 transition flex flex-col items-center p-4 gap-2 group cursor-pointer">
-                <img src={recursoImg} alt={recurso.titulo} className="w-44 h-44 object-contain rounded mb-2 group-hover:scale-105 transition" />
+                <img src={recurso.img} alt={recurso.titulo} className="w-44 h-44 object-contain rounded mb-2 group-hover:scale-105 transition" />
                 <span className="text-center font-semibold text-[#e3e2e2] group-hover:text-white text-base">{recurso.titulo}</span>
               </div>
             ))}
@@ -133,7 +133,7 @@ const Recursos: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {recursosWeb.map((recurso, i) => (
               <div key={i} className="bg-white/5 backdrop-blur-sm rounded-xl shadow hover:shadow-lg hover:bg-[#2563eb]/20 transition flex flex-col items-center p-4 gap-2 group cursor-pointer">
-                <img src={recursoImg} alt={recurso.titulo} className="w-44 h-44 object-contain rounded mb-2 group-hover:scale-105 transition" />
+                <img src={recurso.img} alt={recurso.titulo} className="w-44 h-44 object-contain rounded mb-2 group-hover:scale-105 transition" />
                 <span className="text-center font-semibold text-[#e3e2e2] group-hover:text-white text-base">{recurso.titulo}</span>
               </div>
             ))}
@@ -144,7 +144,7 @@ const Recursos: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {recursosRedes.map((recurso, i) => (
               <div key={i} className="bg-white/5 backdrop-blur-sm rounded-xl shadow hover:shadow-lg hover:bg-[#2563eb]/20 transition flex flex-col items-center p-4 gap-2 group cursor-pointer">
-                <img src={recursoImg} alt={recurso.titulo} className="w-44 h-44 object-contain rounded mb-2 group-hover:scale-105 transition" />
+                <img src={recurso.img} alt={recurso.titulo} className="w-44 h-44 object-contain rounded mb-2 group-hover:scale-105 transition" />
                 <span className="text-center font-semibold text-[#e3e2e2] group-hover:text-white text-base">{recurso.titulo}</span>
               </div>
             ))}
@@ -155,7 +155,7 @@ const Recursos: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {recursosArduino.map((recurso, i) => (
               <div key={i} className="bg-white/5 backdrop-blur-sm rounded-xl shadow hover:shadow-lg hover:bg-[#2563eb]/20 transition flex flex-col items-center p-4 gap-2 group cursor-pointer">
-                <img src={recursoImg} alt={recurso.titulo} className="w-44 h-44 object-contain rounded mb-2 group-hover:scale-105 transition" />
+                <img src={recurso.img} alt={recurso.titulo} className="w-44 h-44 object-contain rounded mb-2 group-hover:scale-105 transition" />
                 <span className="text-center font-semibold text-[#e3e2e2] group-hover:text-white text-base">{recurso.titulo}</span>
               </div>
             ))}

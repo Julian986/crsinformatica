@@ -78,7 +78,7 @@ const Home = () => {
                 ))}
               </div>
             </div>
-
+  
             {/* Atención */}
             <section className="bg-white/5 backdrop-blur-sm text-white p-6 rounded-xl shadow-md text-center">
               <h2 className="text-xl md:text-2xl font-bold mb-2">ATENCIÓN A PARTICULARES, COMERCIOS, PROFESIONALES, PYMES Y EMPRESAS</h2>
@@ -88,7 +88,7 @@ const Home = () => {
             {/* Quiénes somos */}
             <section className="bg-white/5 backdrop-blur-sm p-6 rounded-xl shadow flex flex-col md:flex-row items-center gap-6">
               <div className="md:w-1/2 flex justify-center">
-                <img src="http://crsinformatica.com.ar/images/de454632-5976-42ad-804e-13e31dfc440c.png" alt="Quiénes somos CRS Informática" className="w-full max-w-xs rounded shadow-md" />
+                <img src="https://res.cloudinary.com/dzoupwn0e/image/upload/v1751561549/de454632-5976-42ad-804e-13e31dfc440c_vmjyiu.webp" alt="Quiénes somos CRS Informática" className="w-full max-w-xs rounded shadow-md" />
               </div>
               <div className="md:w-1/2 text-left">
                 <h2 className="text-2xl font-bold text-white mb-4">Quiénes somos</h2>

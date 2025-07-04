@@ -5,7 +5,7 @@ const cursos = [
   {
     titulo: 'Curso de actualización, Armado y reparación de PC',
     fecha: '12/AGOSTO/2025',
-    img: 'http://crsinformatica.com.ar/curso/images/gif%20animado%20reparacion.gif',
+    img: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751570699/gif_animado_reparacion_deejpx.gif',
     banner: 'http://crsinformatica.com.ar/curso/images/Banner%20Reparacion.png',
     link: '/reparacion',
     material: 'Descarga del material de estudio del curso en formato PDF.- UNICAMENTE A USUARIOS AUTORIZADOS-',
@@ -13,7 +13,7 @@ const cursos = [
   {
     titulo: 'Curso de administrador de redes y seguridad informática',
     fecha: '21/AGOSTO/2025',
-    img: 'http://crsinformatica.com.ar/curso/images/Gif%20animado%20redes.gif',
+    img: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751570973/Gif_animado_redes_jz9paf.gif',
     banner: 'http://crsinformatica.com.ar/curso/images/FYER%20REDES%20NUEVO.png',
     link: 'redes/index.html',
     material: 'Descarga del material de estudio del curso en formato PDF.- UNICAMENTE A USUARIOS AUTORIZADOS-',
@@ -22,7 +22,7 @@ const cursos = [
 
 const recursos = {
   titulo: 'Recursos',
-  img: 'http://crsinformatica.com.ar/curso/images/gif%20animado%20recursos.gif',
+  img: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1751571001/gif_animado_recursos_q0hpnj.gif',
   link: 'recursos/index.html',
   material: 'LINKS DE DESCARGA DE SOFTWARE LIBRE O VERSIONES DE PRUEBA DE SOFTWARE UTIL PARA EL USUARIO. UNICAMENTE PARA USUARIOS AUTORIZADOS - INGRESO CON USUARIO Y CONTRASEÑA',
 };
@@ -46,7 +46,7 @@ const Cursos: React.FC = () => {
                   <a href={curso.link} className="hover:underline" >{curso.titulo}</a>
                 )}
               </h2>
-              <img src="http://crsinformatica.com.ar/curso/images/logo%20utn%20invertido.png" alt="UTN Logo" className="w-48 h-16 object-contain mx-auto mb-2" />
+              <img src="https://res.cloudinary.com/dzoupwn0e/image/upload/v1751571328/logo-utn-invertido_lpaxku.webp" alt="UTN Logo" className="w-48 h-16 object-contain mx-auto mb-2" />
               <p className="text-white/90 text-sm mb-2 font-medium">{curso.material}</p>
               <div className="bg-[#2563eb] text-white font-bold rounded-lg px-4 py-2 mb-2 text-lg shadow">
                 PRÓXIMO CURSO INICIA<br />{curso.fecha}
@@ -59,7 +59,7 @@ const Cursos: React.FC = () => {
             <h2 className="text-xl font-semibold text-[#2563eb] mb-2">
               <Link to="/recursos" className="hover:underline">{recursos.titulo}</Link>
             </h2>
-            <img src="http://crsinformatica.com.ar/curso/images/logo%20utn%20invertido.png" alt="UTN Logo" className="w-48 h-16 object-contain mx-auto mb-2" />
+            <img src="https://res.cloudinary.com/dzoupwn0e/image/upload/v1751571328/logo-utn-invertido_lpaxku.webp" alt="UTN Logo" className="w-48 h-16 object-contain mx-auto mb-2" />
             <p className="text-white/90 text-sm mb-2 font-medium">{recursos.material}</p>
           </article>
         </div>
@@ -78,8 +78,8 @@ const Cursos: React.FC = () => {
           <p className="text-sm mt-2">ESTE SITIO WEB NO TIENE NINGUNA RELACIÓN CON las instituciones mencionadas.<br />HA SIDO CREADO POR EL DOCENTE PARA BRINDAR SOPORTE A SUS ALUMNOS.<br /><span className="text-[#2563eb]">Acceso únicamente con usuario y contraseña otorgado por el docente.</span></p>
         </section>
         <div className="flex flex-col md:flex-row gap-4 justify-center items-center mt-8">
-          <img src="http://crsinformatica.com.ar/curso/images/Banner%20Reparacion.png" alt="Banner Reparación" className="w-full md:w-1/2 rounded-xl shadow object-contain" />
-          <img src="http://crsinformatica.com.ar/curso/images/FYER%20REDES%20NUEVO.png" alt="Banner Redes" className="w-full md:w-1/2 rounded-xl shadow object-contain" />
+          <img src="https://res.cloudinary.com/dzoupwn0e/image/upload/v1751571604/Banner-Reparacion_k1mmee.webp" alt="Banner Reparación" className="w-full md:w-1/2 rounded-xl shadow object-contain" />
+          <img src="https://res.cloudinary.com/dzoupwn0e/image/upload/v1751571596/FYER-REDES-NUEVO_wwcgwj.webp" alt="Banner Redes" className="w-full md:w-1/2 rounded-xl shadow object-contain" />
         </div>
       </section>
     </main>
