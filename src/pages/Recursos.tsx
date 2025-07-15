@@ -109,7 +109,7 @@ const Recursos: React.FC = () => {
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
-  const recursoImg = 'http://crsinformatica.com.ar/images/slide828e7e6e41baaaeff0b8d986ee6d2.jpg';
+/*   const recursoImg = 'http://crsinformatica.com.ar/images/slide828e7e6e41baaaeff0b8d986ee6d2.jpg'; */
 
   return (
     <main className="min-h-screen bg-white">

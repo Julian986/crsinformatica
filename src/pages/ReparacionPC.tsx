@@ -306,7 +306,7 @@ const ReparacionPC: React.FC = () => {
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
-  const materialImg = 'http://crsinformatica.com.ar/curso/reparacion/images/Rep%201.png';
+  /* const materialImg = 'http://crsinformatica.com.ar/curso/reparacion/images/Rep%201.png'; */
   return (
     <main className="min-h-screen bg-[#f8f9fa]">
       {/* Header Integrado */}
