@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const materialesModulo1 = [
   {
@@ -301,44 +301,63 @@ const materialesModulo1 = [
 ];
 
 const ReparacionPC: React.FC = () => {
+  const location = useLocation();
   const navigate = useNavigate();
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   const materialImg = 'http://crsinformatica.com.ar/curso/reparacion/images/Rep%201.png';
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0a0f1c] py-8 px-4 md:px-8 text-white">
-      <section className="max-w-5xl mx-auto flex flex-col gap-8">
-        <button
-          onClick={() => navigate(-1)}
-          className="mb-2 flex items-center gap-2 text-white hover:text-[#2563eb] transition-colors text-lg font-semibold focus:outline-none"
-          aria-label="Volver"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-          </svg>
-          Volver
-        </button>
-        <header className="mb-6 text-left">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 text-left mt-[34px]">Curso de actualización, armado y reparación de PC - UTN</h1>
-          <p className="text-lg font-semibold text-left">En esta página encontrarás todo el material visto en clase en formato PDF para descargar y algunos archivos más que serán de utilidad.</p>
-          <p className="mt-2 text-base text-left">Estos archivos están comprimidos en formato WINRAR y con la contraseña:</p>
-          <p className="font-mono text-lg text-[#2563eb] bg-gray-800 rounded px-2 py-1 inline-block text-left">www.CRSinformatica.com.ar</p>
-          <p className="text-sm mt-1 text-left">Respetar mayúsculas y minúsculas.</p>
-          <p className="mt-4 font-bold text-white text-left">Prof. Cecilio San Martin</p>
-        </header>
-        <section>
-          <h2 className="text-2xl font-bold text-white mb-4 text-left">Archivos en formato PDF para descargar</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {materialesModulo1.map((mat, i) => (
-              <div
-                key={i}
-                className="bg-white/5 backdrop-blur-sm rounded-xl shadow hover:shadow-lg hover:bg-[#2563eb]/20 transition flex flex-col items-center p-4 gap-2 group cursor-pointer"
-              >
-                <img src={mat.img} alt={mat.titulo} className="w-40 h-28 object-contain rounded mb-2 group-hover:scale-105 transition" />
-                <span className="text-center font-semibold text-[#e3e2e2] group-hover:text-white text-base">{mat.titulo}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-      </section>
+    <main className="min-h-screen bg-[#f8f9fa]">
+      {/* Header Integrado */}
+      <div className="bg-white shadow-sm border-b border-gray-200">
+        <div className="max-w-5xl mx-auto px-4 md:px-8 py-4 md:py-6 relative min-h-[48px] flex items-center">
+          {(!location.state || !location.state.fromMenu) && (
+            <button
+              onClick={() => navigate(-1)}
+              className="absolute left-0 pl-4 md:pl-8 flex items-center gap-2 text-gray-900 hover:text-black transition-colors text-lg font-semibold focus:outline-none"
+              aria-label="Volver"
+              style={{ minWidth: '56px' }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7 md:w-8 md:h-8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+              <span className="hidden md:inline">Volver</span>
+            </button>
+          )}
+          <h1 className="text-2xl md:text-3xl font-bold text-[#22292f] mx-auto text-center">
+            Reparación de PC
+          </h1>
+        </div>
+      </div>
+
+      {/* Contenido Principal */}
+      <div className="max-w-5xl mx-auto px-4 md:px-8 py-6 md:py-8">
+        <div className="flex flex-col gap-8">
+          <header className="mb-6 text-left">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-left mt-[34px]">Curso de actualización, armado y reparación de PC - UTN</h2>
+            <p className="text-lg font-semibold text-gray-700 text-left">En esta página encontrarás todo el material visto en clase en formato PDF para descargar y algunos archivos más que serán de utilidad.</p>
+            <p className="mt-2 text-base text-gray-700 text-left">Estos archivos están comprimidos en formato WINRAR y con la contraseña:</p>
+            <p className="font-mono text-lg text-gray-900 bg-gray-200 rounded px-2 py-1 inline-block text-left">www.CRSinformatica.com.ar</p>
+            <p className="text-sm mt-1 text-gray-600 text-left">Respetar mayúsculas y minúsculas.</p>
+            <p className="mt-4 font-bold text-gray-900 text-left">Prof. Cecilio San Martin</p>
+          </header>
+          <section>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-left">Archivos en formato PDF para descargar</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {materialesModulo1.map((mat, i) => (
+                <div
+                  key={i}
+                  className="bg-white border-[#e5e7eb] hover:shadow-lg hover:bg-[#f1f5f9] transition flex flex-col items-center p-4 gap-2 group cursor-pointer"
+                >
+                  <img src={mat.img} alt={mat.titulo} className="w-40 h-28 object-contain rounded mb-2 group-hover:scale-105 transition" />
+                  <span className="text-center font-semibold text-gray-700 group-hover:text-gray-900 text-base">{mat.titulo}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
   );
 };

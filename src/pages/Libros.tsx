@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const libros = [
   {
@@ -364,29 +365,114 @@ const libros = [
 ];
 
 const Libros: React.FC = () => {
-  const libroImg = 'http://crsinformatica.com.ar/images/slide828e7e6e41eb41baaaeff0b8d986ee6d2.jpg';
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(true);
+  const [usuario, setUsuario] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Aquí puedes poner la lógica real de validación
+    if (usuario === 'admin' && password === '1234') {
+      setShowModal(false);
+      setError('');
+    } else {
+      setError('Usuario o contraseña incorrectos');
+    }
+  };
+
+  const libroImg = 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1752612130/slide828e7e6e41eb41baaaeff0b8d986ee6d2_2_fygjzz.webp';
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0a0f1c] py-8 px-4 md:px-8 text-white">
-      <section className="max-w-6xl mx-auto flex flex-col gap-8">
-        <header className="mb-6 text-left">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 text-left mt-[34px]">Libros en formato PDF para descargar</h1>
-          <p className="text-lg font-semibold text-white/80 text-left">Aquí encontrarás una selección de libros en PDF para descargar, útiles para el estudio y la formación en informática, redes, hardware y software.</p>
-        </header>
-        <section>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {libros.map((libro, i) => (
-              <div
-                key={i}
-                className="bg-white/5 backdrop-blur-sm rounded-xl shadow hover:shadow-lg hover:bg-[#2563eb]/20 transition flex flex-col items-center p-4 gap-2 group cursor-pointer"
-              >
-                <img src={libroImg} alt={libro.titulo} className="w-44 h-60 object-contain rounded mb-2 group-hover:scale-105 transition" />
-                <span className="text-center font-semibold text-[#e3e2e2] group-hover:text-white text-base">{libro.titulo}</span>
-              </div>
-            ))}
-          </div>
+    <main className="min-h-screen bg-[#f8f9fa] px-4 md:px-8 text-[#22292f] relative">
+      {/* Modal de Login */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-start justify-center bg-black bg-opacity-50 pt-8 md:pt-16">
+          <form onSubmit={handleLogin} className="bg-white rounded-xl shadow-lg p-8 w-full max-w-xs md:max-w-sm flex flex-col gap-4 animate-fade-in relative">
+            <button
+              type="button"
+              onClick={() => navigate(-1)}
+              className="absolute left-4 top-4 flex items-center gap-2 text-gray-900 hover:text-black transition-colors text-lg font-semibold focus:outline-none"
+              aria-label="Volver"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+            <h2 className="text-2xl font-bold text-center mb-2 text-gray-800 mt-2">Acceso a Libros</h2>
+            <input
+              type="text"
+              placeholder="Usuario"
+              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-800"
+              value={usuario}
+              onChange={e => setUsuario(e.target.value)}
+              autoFocus
+            />
+            <input
+              type="password"
+              placeholder="Contraseña"
+              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-800"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+            />
+            {error && <div className="text-red-600 text-sm text-center">{error}</div>}
+            <button
+              type="submit"
+              className="bg-gray-800 text-white font-bold rounded-lg px-4 py-2 mt-2 hover:bg-gray-700 transition"
+            >
+              Ingresar
+            </button>
+          </form>
+        </div>
+      )}
+      {/* Header Integrado */}
+      <div className="bg-white shadow-sm border-b border-gray-200">
+        <div className="w-full px-4 md:max-w-6xl md:mx-auto md:px-8 py-4 md:py-6 relative min-h-[48px] flex items-center">
+          {(!location.state || !location.state.fromMenu) && (
+            <button
+              onClick={() => navigate(-1)}
+              className="absolute left-0 pl-4 md:pl-8 flex items-center gap-2 text-gray-900 hover:text-black transition-colors text-lg font-semibold focus:outline-none md:hidden"
+              aria-label="Volver"
+              style={{ minWidth: '56px' }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7 md:w-8 md:h-8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+              <span className="hidden md:inline">Volver</span>
+            </button>
+          )}
+          <h1 className="text-2xl md:text-3xl font-bold text-[#22292f] mx-auto text-center">
+            Libros en formato PDF para descargar
+          </h1>
+        </div>
+      </div>
+      {/* Contenido Principal */}
+      <div className={showModal ? "opacity-30 pointer-events-none select-none" : "opacity-100 transition-opacity duration-300"}>
+        <section className="max-w-6xl mx-auto flex flex-col gap-8 mt-6 pt-6">
+          <p className="text-lg font-semibold text-[#6b7280] text-center">
+            Aquí encontrarás una selección de libros en PDF para descargar, útiles para el estudio y la formación en informática, redes, hardware y software.
+          </p>
+          <section>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {libros.map((libro, i) => (
+                <div
+                  key={i}
+                  className="bg-white border-[#e5e7eb] shadow-sm rounded-xl hover:shadow-lg hover:bg-[#f1f5f9] transition flex flex-col items-center p-4 gap-2 group cursor-pointer"
+                >
+                  <img src={libroImg} alt={libro.titulo} className="w-44 h-60 object-contain rounded mb-2 group-hover:scale-105 transition" />
+                  <span className="text-center font-semibold text-[#6b7280] group-hover:text-[#22292f] text-base">{libro.titulo}</span>
+                </div>
+              ))}
+            </div>
+          </section>
         </section>
-      </section>
+      </div>
     </main>
   );
 };
